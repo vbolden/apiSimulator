@@ -33,10 +33,21 @@ function fetchProductReviews(productId: number): Promise<string[]> {
     })
 }
 
-function fetchSalesReport(totalSales: number, unitsSold: number, averagePrice: number): Promise<void> {
+function fetchSalesReport(){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
+            if(Math.random() < 0.7) {
+                reject("Failed to fetch sales report")
+            } else {
 
+                const report = {
+                    totalSales: 135000,
+                    unitsSold: 540,
+                    averagePrice: 250,
+                }
+
+                resolve(report);
+            }
         }, 1000)
     })
 }

@@ -1,10 +1,13 @@
+// FUNCTIONS WITH PROMISES
 function fetchProductCatalog(id: number, name: string, price: number) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (Math.random() < 0.8) {
                 resolve([
-                    {id: 1, name: "Laptop", price: 1200},
-                    {id: 2, name: "Headphone", price: 150},
+                    { id: 1, name: "Laptop", price: 1200 },
+                    { id: 2, name: "Headphone", price: 150 },
+                    { id: 3, name: "Phone", price: 800 },
+                    { id: 4, name: "Tablet", price: 1100 }
                 ]);
             } else {
                 reject("Failed to fetch product catalog")
@@ -13,11 +16,20 @@ function fetchProductCatalog(id: number, name: string, price: number) {
     })
 }
 
-function fetchProductReviews(productId: number): Promise<void> {
+function fetchProductReviews(productId: number): Promise<string[]> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-
-        }, 1000)
+            if (Math.random() < 0.6) {
+                reject(`Failed to fetch reviews for product ID ${productId}`)
+            } else {
+                const reviews = [
+                    "Great Product!",
+                    "Would recommend to friends and family",
+                    "I've used better, wasn't bad though"
+                ];
+                resolve(reviews)
+            }
+        }, 1500)
     })
 }
 
@@ -28,3 +40,5 @@ function fetchSalesReport(totalSales: number, unitsSold: number, averagePrice: n
         }, 1000)
     })
 }
+
+// CHAINED PROMISES

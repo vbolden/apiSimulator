@@ -1,5 +1,5 @@
 // FUNCTIONS WITH PROMISES
-function fetchProductCatalog(id: number, name: string, price: number) {
+export function fetchProductCatalog(): Promise<{id: number; name: string; price: number} []> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (Math.random() < 0.8) {
@@ -16,10 +16,10 @@ function fetchProductCatalog(id: number, name: string, price: number) {
     })
 }
 
-function fetchProductReviews(productId: number): Promise<string[]> {
+export function fetchProductReviews(productId: number): Promise<string[]> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (Math.random() < 0.6) {
+            if (Math.random() < 0.8) {
                 reject(`Failed to fetch reviews for product ID ${productId}`)
             } else {
                 const reviews = [
@@ -33,10 +33,10 @@ function fetchProductReviews(productId: number): Promise<string[]> {
     })
 }
 
-function fetchSalesReport() {
+export function fetchSalesReport(): Promise <{totalSales: number; unitsSold: number; averagePrice: number}> {
      return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if(Math.random() < 0.7) {
+            if(Math.random() < 0.8) {
                 reject("Failed to fetch sales report")
             } else {
 

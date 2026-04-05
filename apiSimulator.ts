@@ -5,7 +5,7 @@ import { NetworkError, DataError } from "./errors";
 export function fetchProductCatalog(): Promise<{ id: number; name: string; price: number }[]> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (Math.random() < 0.2) {
+            if (Math.random() < 0.85) {
                 const products = [
                     { id: 1, name: "Laptop", price: 1200 },
                     { id: 2, name: "Headphone", price: 150 },
@@ -28,7 +28,7 @@ export function fetchProductCatalog(): Promise<{ id: number; name: string; price
 export function fetchProductReviews(productId: number): Promise<string[]> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (Math.random() > 0.9) {
+            if (Math.random() > 0.8) {
                 reject(new NetworkError(`Network issue fetching reviews for product ${productId}`));
                 return;
             } else {
@@ -52,7 +52,7 @@ export function fetchProductReviews(productId: number): Promise<string[]> {
 export function fetchSalesReport(): Promise<{ totalSales: number; unitsSold: number; averagePrice: number }> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (Math.random() > 0.9) {
+            if (Math.random() > 0.8) {
                 reject(new NetworkError("Network issues while fetching sales report"))
             } else {
 

@@ -2,7 +2,7 @@
 export function fetchProductCatalog(): Promise<{id: number; name: string; price: number} []> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (Math.random() < 0.8) {
+            if (Math.random() < 0.9) {
                 resolve([
                     { id: 1, name: "Laptop", price: 1200 },
                     { id: 2, name: "Headphone", price: 150 },
@@ -19,7 +19,7 @@ export function fetchProductCatalog(): Promise<{id: number; name: string; price:
 export function fetchProductReviews(productId: number): Promise<string[]> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (Math.random() < 0.8) {
+            if (Math.random() < 0.9) {
                 reject(`Failed to fetch reviews for product ID ${productId}`)
             } else {
                 const reviews = [
@@ -36,7 +36,7 @@ export function fetchProductReviews(productId: number): Promise<string[]> {
 export function fetchSalesReport(): Promise <{totalSales: number; unitsSold: number; averagePrice: number}> {
      return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if(Math.random() < 0.8) {
+            if(Math.random() < 0.9) {
                 reject("Failed to fetch sales report")
             } else {
 

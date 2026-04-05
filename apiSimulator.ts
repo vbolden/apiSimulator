@@ -51,5 +51,3 @@ function fetchSalesReport() {
         }, 1000)
     })
 }
-
-// CHAINED PROMISES

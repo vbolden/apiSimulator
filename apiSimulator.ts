@@ -33,8 +33,8 @@ function fetchProductReviews(productId: number): Promise<string[]> {
     })
 }
 
-function fetchSalesReport(){
-    return new Promise((resolve, reject) => {
+function fetchSalesReport() {
+     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if(Math.random() < 0.7) {
                 reject("Failed to fetch sales report")

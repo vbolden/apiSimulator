@@ -11,4 +11,6 @@ Build a small application that leverages asynchronous API calls using Promises. 
 
 - Handling errors for each individual API call is important because if you handle it at the end it will be harder to pinpoint the call with the error. Calling them individually will show which one has the error so you don't have to go searching for it.
 
-- 
+- Using custom error classes makes it easier to categorize the issues and helps to debug the code quicker.
+
+- A retry mechanism would be better in situations with temporary network issues or with database outages which are usually brief issues. Immediate failures can create a bad user experience especially when dealing with issues that can fix themselves quickly.
